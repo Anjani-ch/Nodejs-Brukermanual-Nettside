@@ -1,0 +1,29 @@
+%btn {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 2px solid var(--bg-primary);
+    border-radius: 5px;
+    outline: 0;
+    font-size: .9rem;
+}
+
+.btn-primary {
+    @extend %btn;
+
+    background-color: var(--bg-primary);
+    color: var(--text-secondary);
+}
+
+.btn-primary-transparent {
+    @extend %btn;
+
+    background-color: transparent;
+    color: var(--text-primary);
+    transition: background-color .3s ease;
+
+    &:hover {
+        background-color: var(--bg-primary);
+        color: var(--text-secondary);
+    }
+}

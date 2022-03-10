@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap');
 
 @import 'theme';
+@import 'utilities';
+@import 'buttons';
 
 *,
 *::after,
@@ -11,6 +13,66 @@
     font-family: 'Fredoka', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
-    background-color: var(--bg);
+    background-color: var(--body-bg);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px;
+
+    img {
+        filter: var(--nav-logo-color);
+        width: 80px;
+    }
+
+    ul {
+        li {
+            display: inline;
+            margin: 0px 10px;
+
+            a {
+                color: var(--nav-link-color);
+            }
+        }
+    }
+}
+
+#home {
+    padding: 20px 0px;
+
+    div {
+        h1 {
+            font-size: 7rem;
+
+            span { color: var(--bg-primary); }
+        }
+
+        p {
+            color: grey;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+
+        :last-child {
+            margin-left: 4px;
+        }
+    }
+
+    img {
+        max-width: 300px;
+        filter: var(--primary-svg);
+    }
+}
+
+footer p {
+    text-align: center;
+    font-size: 1.2rem;
 }
