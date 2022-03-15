@@ -1,7 +1,74 @@
 <%- include('./partials/head.ejs') %>
 
-    <div class="container">
-        <h1>About</h1>
-    </div>
+    <main class="container" id="about">
+        <aside id="about-aside">
+            <nav>
+                <ul>
+                    <li data-target="about-node">Node JS</li>
+                    <li data-target="about-creator">Ryan Dahl</li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <section id="about-content">
+            <div id="about-node">
+                <h1>About Node JS</h1>
+    
+                <br>
+    
+                <p>As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications. Many connections can be handled concurrently. Upon each connection, a callback is fired, but if there is no work to be done, Node.js will sleep.</p>
+
+                <br>
+    
+                <p>This is in contrast to today's more common concurrency model, in which OS threads are employed. Thread-based networking is relatively inefficient and very difficult to use. Furthermore, users of Node.js are free from worries of dead-locking the process, since there are no locks. Almost no function in Node.js directly performs I/O, so the process never blocks except when the I/O is performed using synchronous methods of Node.js standard library. Because nothing blocks, scalable systems are very reasonable to develop in Node.js.</p>
+
+                <br>
+
+                <p>Node.js is similar in design to, and influenced by, systems like Ruby's Event Machine and Python's Twisted. Node.js takes the event model a bit further. It presents an event loop as a runtime construct instead of as a library. In other systems, there is always a blocking call to start the event-loop. Typically, behavior is defined through callbacks at the beginning of a script, and at the end a server is started through a blocking call like EventMachine::run(). In Node.js, there is no such start-the-event-loop call. Node.js simply enters the event loop after executing the input script. Node.js exits the event loop when there are no more callbacks to perform. This behavior is like browser JavaScript — the event loop is hidden from the user.</p>
+
+                <br>
+
+                <p>HTTP is a first-class citizen in Node.js, designed with streaming and low latency in mind. This makes Node.js well suited for the foundation of a web library or framework.</p>
+
+                <br>
+
+                <p>Node.js being designed without threads doesn't mean you can't take advantage of multiple cores in your environment. Child processes can be spawned by using our child_process.fork() API, and are designed to be easy to communicate with. Built upon that same interface is the cluster module, which allows you to share sockets between processes to enable load balancing over your cores.</p>
+            </div>
+    
+            <br>
+    
+            <div id="about-creator" class="d-none">
+                <h1>About Ryan Dahl</h1>
+    
+                <br>
+    
+                <p>Ryan Dahl (born 1981) is an American software engineer who is best known for creating the de-facto Node.js JavaScript runtime as well as the Deno JavaScript/TypeScript runtime.</p>
+    
+                <br>
+    
+                <div>
+                    <h3>Early life and education</h3>
+    
+                    <br>
+    
+                    <p>Dahl grew up in San Diego, California. His mother got him an Apple IIc when he was six years old, one of his first experiences with technology. Ryan attended a community college in San Diego and later transferred into UC San Diego where he studied mathematics. He went on to attend grad school for Mathematics at the University of Rochester where he studied algebraic topology, which he found "very abstract and beautiful" for a couple of years but later got bored of it because "it was not so applicable to real life." After graduating he entered a Ph.D. program but eventually quit it as he did not want to devote the rest of his life to mathematics. Instead he left for South America where he started developing web apps in Ruby.</p>
+                </div>
+    
+                <br>
+    
+                <div>
+                    <h3>Career</h3>
+    
+                    <br>
+                    
+                    <p>After working on the Node project since 2009, Dahl announced in January, 2012 that he would step away from the project and turn over the reins to NPM creator and former Joyent employee Isaac Z. Schlueter.</p>
+    
+                    <p>Ryan Dahl gave the following reason for moving on from the project:<br><span class="text-muted">“After three years of working on Node, this frees me up to work on research projects. I am still an employee at Joyent and will advise from the sidelines but I won’t be involved in the day-to-day bug fixes.”</span></p>
+                </div>
+            </div>
+        </section>
+
+        <br>
+    </main>
 
 <%- include('./partials/footer.ejs') %>
