@@ -27,3 +27,11 @@
         color: var(--text-secondary);
     }
 }
+
+.btn-github {
+    @extend %btn;
+    border: 2px solid purple;
+
+    background-color: purple;
+    color: white;
+}
