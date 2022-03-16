@@ -113,13 +113,14 @@ nav {
             ul {
                 display: flex;
                 flex-direction: column;
+                width: 100%;
 
                 li {
                     font-size: 1.2rem;
                     padding: 5px 10px;
                     border: 1px solid white;
-                    cursor: pointer;
                     min-width: 180px;
+                    cursor: pointer;
                     color: white;
                     background-color: var(--bg-primary);
                 }
@@ -128,6 +129,12 @@ nav {
     }
 
     #about-content { margin-left: 20px; }
+
+    @include media-mobile {
+        grid-template-columns: 1fr;
+
+        #about-aside { margin-bottom: 20px; }
+    }
 }
 
 footer {
