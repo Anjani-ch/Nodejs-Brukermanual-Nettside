@@ -1,7 +1,242 @@
 <%- include('./partials/head.ejs') %>
 
-    <div class="container">
-        <h1>Docs</h1>
-    </div>
+    <main class="container" id="docs">
+        <aside id="docs-aside">
+            <nav>
+                <ul>
+                    <li>
+                        <div class="dropdown">
+                            <div class="dropdown-head">
+                                <p>Installation</p>
+                                <img src="/img/dropdown-icon.svg" alt="dropdown-icon">
+                            </div>
+
+                            <div class="dropdown-content d-none-important">
+                                <ul>
+                                    <li data-target="win-installation">Windows</li>
+                                    <li data-target="mac-installation">Mac</li>
+                                    <li data-target="linux-installation">Linux</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li data-target="docs-repl">REPL</li>
+                    <li data-target="docs-npm">NPM</li>
+                    <li data-target="docs-modules">Modules</li>
+                    <li data-target="docs-frameworks">Frameworks</li>
+                    <li data-target="docs-template-engines">Template Engines</li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <section id="docs-content">
+            <div id="docs-installation">
+                <div id="win-installation">
+                    <h1>Windows</h1>
+
+                    <p>1: Downloading the Node.js ".msi" installer.</p>
+
+                    <br>
+
+                    <p>The first step to install Node.js on windows is to download the installer. Visit the official Node.js website i.e) <a href="https://nodejs.org/en/download/" target="_blank">https://nodejs.org/en/download/</a> and download the .msi file according to your system environment (32-bit & 64-bit). An MSI installer will be downloaded on your system.</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-1.png" alt="win-step-1">
+
+                    <p>2: Running the Node.js installer.</p>
+
+                    <br>
+
+                    <p>Now you need to install the node.js installer on your PC. You need to follow the following steps for the Node.js to be installed.</p>
+
+                    <br>
+
+                    <p>Double click on the .msi installer.</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-1.png" alt="win-step-2-1">
+
+                    <p>Click “Next”, End-User License Agreement (EULA) will open.</p>
+                    <p>Check "I accept the terms in the License Agreement", and select "Next"</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-2.png" alt="win-step-2-2">
+
+                    <p>Set the Destination Folder where you want to install Node.js, and select "Next"</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-3.png" alt="win-step-2-3">
+
+                    <p>Custom Setup, and select "Next"</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-4.png" alt="win-step-2-4">
+
+                    <p>You can now install Node js by selecting "Install"</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-5.png" alt="win-step-2-5">
+
+                    <h4 class="fw-bold">NOTE:</h4>
+                    <p>A prompt saying - "This step requires administrative privileges" will appear.</p>
+                    <p>Authenticate the prompt as an <span class="fw-bold">"Administrator"</span></p>
+
+                    <br>
+
+                    <p>Do not close or cancel the installer until the install is complete</p>
+                    <p>Complete Node.js Setup by clicking "Finish"</p>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-6.png" alt="win-step-2-6">
+
+                    <p>3: Verify Node js installation</p>
+
+                    <br>
+
+                    <p>To check that node.js was completely installed on your system or not, you can run the following command in your command prompt or Windows Powershell and test it:</p>
+
+                    <span class="fw-bold">node -v</span>
+
+                    <br>
+
+                    <img src="/img/installation/windows/win-step-2-7.png" alt="win-step-2-7">
+
+                    <p>If node.js was completely installed on your system, the command prompt will print the version of the node.js installed.</p>
+                </div>
+
+                <div class="d-none" id="mac-installation">
+                    <h1>Mac</h1>
+
+                    <p>1. Download</p>
+
+                    <br>
+
+                    <p>Visit Node js download page <a href="https://nodejs.org/en/download/">here</a></p>
+                    <p>Click on macOS Installer to download the latest version of node installable package.</p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-1.png" alt="mac-step-1-1">
+
+                    <p>2. Install</p>
+
+                    <br>
+
+                    <p>Click on the download node-vxx.xx.xx.pkg (for example node-v10.15.0.pkg) in previous step to start the installation which brings up below screen. Please click <span class="fw-bold">continue</span></p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-1.png" alt="mac-step-2-1">
+
+                    <p>By clicking continue in previous step you will be asked to accept license, please click continue</p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-2.png" alt="mac-step-2-2">
+
+                    <p>Please accept the agreement by clicking <span class="fw-bold">Agree</span></p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-3.png" alt="mac-step-2-3">
+
+                    <p>Click <span class="fw-bold">continue</span></p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-4.png" alt="mac-step-2-4">
+
+                    <p>Click <span class="fw-bold">install</span>, which would prompt you for the credentials</p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-5.png" alt="mac-step-2-5">
+
+                    <br>
+
+                    <p>Provide username and password and click <span class="fw-bold">Install Software</span> </p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-6.png" alt="mac-step-2-6">
+
+                    <p>On successful installation you will see the below screen which shows the summary of the installation.</p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-2-7.png" alt="mac-step-2-7">
+
+                    <p>To access the node and npm executable from terminal make sure "/usr/local/bin" is in your $PATH. You can verify that by running "echo" $PATH command in terminal</p>
+
+                    <br>
+
+                    <p>3. Testing Installation</p>
+
+                    <br>
+
+                    <p>Open terminal and run below command to test node</p>
+                    <p>node -v</p>
+
+                    <br>
+
+                    <img src="/img/installation/mac/mac-step-3.png" alt="mac-step-3">
+                </div>
+
+                <div class="d-none" id="linux-installation">
+                    <h1>Linux</h1>
+
+                    <h3>Ubuntu, Debian, Mint:</h3>
+                    <p>sudo apt install nodejs npm</p>
+
+                    <br>
+
+                    <h3>CentOS(8 - latest), Fedora, Red Hat(latest):</h3>
+                    <p>sudo dnf install nodejs</p>
+
+                    <br>
+
+                    <h3>CentOS(6, 7, 8), Red Hat(old):</h3>
+                    <p>sudo yum install epel-release</p>
+                    <p>sudo yum install nodejs</p>
+
+                    <br>
+
+                    <h3>Arch, Manjaro:</h3>
+                    <p>sudo pacman -S nodejs</p>
+
+                    <br>
+
+                    <p>Run "node -v" in terminal to confirm installation success</p>
+                </div>
+            </div>
+
+            <div class="d-none" id="docs-repl">
+                <h1>REPL</h1>
+            </div>
+
+            <div class="d-none" id="docs-npm">
+                <h1>NPM</h1>
+            </div>
+
+            <div class="d-none" id="docs-modules">
+                <h1>Modules</h1>
+            </div>
+
+            <div class="d-none" id="docs-frameworks">
+                <h1>Frameworks</h1>
+            </div>
+
+            <div class="d-none" id="docs-template-engines">
+                <h1>Template Engines</h1>
+            </div>
+        </section>
+    </main>
 
 <%- include('./partials/footer.ejs') %>

@@ -9,11 +9,8 @@ if (about) {
             const aboutSections = Array.from(document.querySelector('#about-content').children);
 
             aboutSections.forEach(child => {
-                if (child.id === target && child.classList.contains('d-none')) {
-                    child.classList.remove('d-none');
-                } else if (child.id !== target) {
-                    child.classList.add('d-none');
-                }
+                if (child.id === target && child.classList.contains('d-none')) child.classList.remove('d-none');
+                else if (child.id !== target) child.classList.add('d-none');
             });
         }
     });

@@ -20,6 +20,9 @@ a {
     text-decoration: none;
 }
 
+ul { list-style: none; }
+
+
 body {
     background-color: var(--body-bg);
 }
@@ -118,6 +121,8 @@ nav {
                 width: 100%;
 
                 li {
+                    $link-border-radius: 15px;
+
                     font-size: 1.2rem;
                     padding: 5px 10px;
                     border: 1px solid white;
@@ -125,8 +130,14 @@ nav {
                     cursor: pointer;
                     color: white;
                     background-color: var(--bg-primary);
+                    border-top-right-radius: $link-border-radius;
+                    border-bottom-right-radius: $link-border-radius;
                 }
             }
+        }
+
+        @include media-mobile {
+            #about-aside { margin-bottom: 20px; }
         }
     }
 
@@ -134,14 +145,79 @@ nav {
 
     @include media-mobile {
         grid-template-columns: 1fr;
+    }
+}
 
-        #about-aside { margin-bottom: 20px; }
+#docs {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+
+    #docs-aside {
+        nav {
+            ul {
+                display: flex;
+                flex-direction: column;
+
+                li {
+                    font-size: 1.2rem;
+                    cursor: pointer;
+                    margin: 5px 0px;
+
+                    .dropdown {
+                        &-head {
+                            display: flex;
+                            align-items: center;
+                            img {
+                                width: 15px;
+                                margin-left: 6px;
+
+                                &.dropdown-toggled {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+
+                        &-content {
+                            display: flex;
+                            flex-direction: column;
+                            transform: translateX(10px);
+
+                            li { margin: 4px 0px; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #docs-content {
+        margin-left: 20px;
+
+        #docs-installation {
+            div {
+                margin-bottom: 60px;
+
+                h1, h4 { margin-bottom: 9px; }
+
+                img {
+                    width: 80%;
+                    margin-bottom: 40px;
+
+                    @include media-mobile { width: 100%; }
+                }
+
+                ul {  list-style: inside; }
+            }
+        }
     }
 }
 
 #examples {
     .cards-wrapper {
         .card {
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+
             &-body {
                 a, button { width: 100%; }
             }
