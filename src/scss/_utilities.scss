@@ -27,7 +27,8 @@
     margin: 10px 0px;
     border-radius: 5px;
     background-color: #2c3437;
-    color: white;
+
+    * { color: white !important; }
 
     img {
         filter: var(--svg-white);
@@ -43,9 +44,6 @@
         p { transform: translateY(-1.5px) }
     }
 }
-
-// Colors
-.text-muted { color: grey; }
 
 // Font-weight
 .fw-bold { font-weight: bold; }
@@ -69,8 +67,8 @@ $display-properties: (block, inline, inline-block, flex, grid, none);
     .d-#{$property}-important { display: #{$property} !important; }
     .d-lg-#{$property}-important { @include media-lg { display: #{$property} !important; } }
     .d-mb-#{$property}-important { @include media-mobile { display: #{$property} !important; } }
-    .d-md-#{$property} { @include media-md { display: #{$property} !important; } }
-    .d-sm-#{$property} { @include media-sm { display: #{$property} !important; } }
+    .d-md-#{$property}-important { @include media-md { display: #{$property} !important; } }
+    .d-sm-#{$property}-important { @include media-sm { display: #{$property} !important; } }
 }
 
 // Position

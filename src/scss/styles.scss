@@ -20,15 +20,11 @@ a {
     text-decoration: none;
 }
 
-body {
-    background-color: var(--body-bg);
-}
+img::selection { background-color: transparent; }
+
+body { background-color: var(--body-bg); }
 
 nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    align-items: center;
     padding-top: 10px;
 
     img {
@@ -44,6 +40,12 @@ nav {
             a {
                 color: var(--nav-link-color);
             }
+
+            img {
+                margin-left: 15px;
+                width: 30px;
+                cursor: pointer;
+            }
         }
     }
 }
@@ -56,7 +58,8 @@ nav {
             h1 {
                 font-size: 7rem;
     
-                span { color: var(--bg-primary); }
+                :first-child { color: var(--bg-primary); }
+                :last-child { color: var(--text-primary); }
 
                 @include media-mobile { font-size: 4.6rem; }
             }
@@ -64,6 +67,7 @@ nav {
             p {
                 font-size: 1.25rem;
                 margin-bottom: 15px;
+                color: var(--text-primary);
 
                 @include media-mobile {
                     margin-top: 15px;
@@ -87,10 +91,21 @@ nav {
     }
 
     #stats {
+        h1 { color: var(--text-primary); }
+
         #stat-cards {
             div {
-                img { width: 70px; }
-                h2 { margin: 12px 0px; }
+                img {
+                    width: 70px;
+                    filter: var(--primary-svg);
+                }
+
+                h2 {
+                    margin: 12px 0px;
+                    color: var(--text-primary);
+                }
+
+                p { color: var(--text-primary); }
             }
 
             @include media-mobile {
@@ -123,7 +138,7 @@ nav {
 
                     font-size: 1.2rem;
                     padding: 5px 10px;
-                    border: 1px solid white;
+                    border: 1px solid var(--body-bg);
                     min-width: 180px;
                     cursor: pointer;
                     color: white;
@@ -134,12 +149,22 @@ nav {
             }
         }
 
+        @include media-lg {
+            margin-bottom: 25px;
+        }
+
         @include media-mobile {
-            #about-aside { margin-bottom: 20px; }
+            margin-bottom: 20px;
         }
     }
 
-    #about-content { margin-left: 20px; }
+    #about-content {
+        margin-left: 20px;
+
+        div {
+            * { color: var(--text-primary); }
+        }
+    }
 
     @include media-mobile {
         grid-template-columns: 1fr;
@@ -157,7 +182,7 @@ nav {
 
         #docs-menu {
             background-color: var(--bg-primary);
-            color: var(--text-secondary);
+            color: white;
             padding-top: 10px;
         
             img {
@@ -171,7 +196,7 @@ nav {
         #docs-aside {
             top: 0;
             left: 0;
-            
+
             nav {
                 ul {
                     display: flex;
@@ -181,6 +206,7 @@ nav {
                         font-size: 1.2rem;
                         cursor: pointer;
                         margin: 5px 0px;
+                        color: var(--text-primary);
     
                         .dropdown {
                             &-head {
@@ -203,6 +229,10 @@ nav {
     
                                 li { margin: 4px 0px; }
                             }
+                        }
+
+                        @include media-mobile {
+                            color: white;
                         }
                     }
                 }
@@ -239,6 +269,8 @@ nav {
         div {
             h1, h4 { margin-bottom: 9px; }
             ul, ol { transform: translateX(15px) }
+
+            *:not(a) { color: var(--text-primary); }
         }
 
         #docs-installation {
@@ -261,10 +293,15 @@ nav {
 }
 
 #examples {
+    h1 { color: var(--text-primary); }
+
     .cards-wrapper {
         .card {
             background-color: var(--bg-primary);
-            color: var(--text-secondary);
+
+            &-heading {
+                * { color: white; }
+            }
 
             &-body {
                 a, button { width: 100%; }
@@ -275,7 +312,7 @@ nav {
 
 footer {
     background-color: var(--bg-primary);
-    color: var(--text-secondary);
+    color: white;
 
     &.footer-bottom {
         position: fixed;

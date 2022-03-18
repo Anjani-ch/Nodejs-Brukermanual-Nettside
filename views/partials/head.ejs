@@ -10,13 +10,16 @@
     <title>Node JS | <%= title %></title>
 </head>
 <body>
-    <nav class="container">
+    <nav class="container d-flex align-items-center justify-content-space-between">
         <a href="/"><img src="/img/node-logo.svg" alt="nav-logo"></a>
 
-        <ul>
+        <img class="d-lg-none" src="/img/hamburger-menu-icon.svg" alt="hamburger-menu-icon">
+
+        <ul class="d-flex align-items-center d-sm-none-important">
             <li class="nav-link"><a href="/">Home</a></li>
             <li class="nav-link"><a href="/about">About</a></li>
             <li class="nav-link"><a href="/docs">Docs</a></li>
             <li class="nav-link"><a href="/examples">Examples</a></li>
+            <li><img id="theme-toggler" src="/img/sun-icon.svg" alt="sun-icon"></li>
         </ul>
     </nav>

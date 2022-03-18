@@ -11,7 +11,7 @@
 }
 
 @mixin media-sm() {
-    @media(max-width: 500px) { @content; }
+    @media(max-width: 530px) { @content; }
 }
 
 @mixin set-contrast($color) {
