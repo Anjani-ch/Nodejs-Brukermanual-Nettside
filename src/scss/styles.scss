@@ -20,9 +20,6 @@ a {
     text-decoration: none;
 }
 
-ul { list-style: none; }
-
-
 body {
     background-color: var(--body-bg);
 }
@@ -193,11 +190,14 @@ nav {
     #docs-content {
         margin-left: 20px;
 
+        div {
+            h1, h4 { margin-bottom: 9px; }
+            ul, ol { transform: translateX(15px) }
+        }
+
         #docs-installation {
             div {
                 margin-bottom: 60px;
-
-                h1, h4 { margin-bottom: 9px; }
 
                 img {
                     width: 80%;
@@ -205,8 +205,6 @@ nav {
 
                     @include media-mobile { width: 100%; }
                 }
-
-                ul {  list-style: inside; }
             }
         }
     }

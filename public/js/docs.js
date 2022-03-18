@@ -28,20 +28,15 @@ if (docs) {
                 });
             }
         } else {
-            let target;
+            let targetEl;
 
-            if (e.target.classList.contains('dropdown-head')) target = e.target;
-            if (e.target.parentElement.classList.contains('dropdown-head')) target = e.target.parentElement;
+            if (e.target.classList.contains('dropdown-head')) targetEl = e.target;
+            if (e.target.parentElement.classList.contains('dropdown-head')) targetEl = e.target.parentElement;
 
-            if (target) {
-                target.parentElement.children[1].classList.toggle('d-none-important');
-                target.children[1].classList.toggle('dropdown-toggled');
+            if (targetEl) {
+                targetEl.parentElement.children[1].classList.toggle('d-none-important');
+                targetEl.children[1].classList.toggle('dropdown-toggled');
             }
         }
     });
 }
-
-// Docs view responsiv
-// Navbar responsiv
-// theme toggle
-// more examples
