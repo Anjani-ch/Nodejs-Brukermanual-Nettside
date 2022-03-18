@@ -20,6 +20,14 @@ a {
     text-decoration: none;
 }
 
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 img::selection { background-color: transparent; }
 
 body { background-color: var(--body-bg); }
@@ -29,10 +37,20 @@ nav {
 
     img {
         filter: var(--nav-logo-color);
-        width: 80px;
+        width: 40px;
+
+        &#navbar-icon {
+            display: none;
+            cursor: pointer;
+            z-index: 2;
+        }
     }
 
-    ul {
+    a {
+        img { width: 80px; }
+    }
+
+    #navbar-links {
         li {
             display: inline;
             margin: 0px 10px;
@@ -45,8 +63,41 @@ nav {
                 margin-left: 15px;
                 width: 30px;
                 cursor: pointer;
+                
+                @include media-sm {
+                    width: 60px;
+                    margin-top: 15px;
+                }
             }
         }
+
+        @include media-sm() {
+            & {
+                position: absolute;
+                top: 0;
+                left: 0%;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--body-bg);
+                color: var(--text-primary);
+                z-index: 1;
+
+                li {
+                    margin: 5px 0px;
+
+                    a {
+                        color: var(--text-primary);
+                        font-size: 2.3rem;
+                    }
+                }
+
+                &.open { left: 0%; }
+            }
+    }
     }
 }
 
@@ -132,6 +183,7 @@ nav {
                 display: flex;
                 flex-direction: column;
                 width: 100%;
+                list-style: none;
 
                 li {
                     $link-border-radius: 15px;
@@ -179,6 +231,7 @@ nav {
     #docs-menu-wrapper {
         top: 0;
         left: 0;
+        z-index: 1;
 
         #docs-menu {
             background-color: var(--bg-primary);
@@ -268,7 +321,7 @@ nav {
     #docs-content {
         div {
             h1, h4 { margin-bottom: 9px; }
-            ul, ol { transform: translateX(15px) }
+            ul, ol { transform: translateX(15px); }
 
             *:not(a) { color: var(--text-primary); }
         }

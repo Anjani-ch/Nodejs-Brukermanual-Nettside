@@ -1,3 +1,4 @@
+import './navbar.js';
 import './footer.js';
 import './theme.js';
 import './about.js';
