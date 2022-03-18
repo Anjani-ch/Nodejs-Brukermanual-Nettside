@@ -1,0 +1,51 @@
+<div class="d-none" id="docs-modules">
+    <h1>Modules</h1>
+
+    <p>In the Node.js module system, each file is treated as a separate module. For example, consider a file named <span class="fw-bold">foo.js</span>:</p>
+
+    <div class="code-example">
+        <pre>const circle = require('./circle.js');<br>console.log(`The area of a circle of radius 4 is ${circle.area(4)}`);</pre>
+    </div>
+
+    <br>
+
+    <p>On the first line, <span class="fw-bold">foo.js</span> loads the module <span class="fw-bold">circle.js</span> that is in the same directory as <span class="fw-bold">foo.js</span>.</p>
+
+    <br>
+
+    <p>Here are the contents of <span class="fw-bold">circle.js</span>:</p>
+
+    <div class="code-example">
+        <pre>const { PI } = Math;<br><br>exports.area = (r) => PI * r ** 2;<br><br>exports.circumference = (r) => 2 * PI * r;</pre>
+    </div>
+
+    <br>
+
+    <p>The module <span class="fw-bold">circle.js</span> has exported the functions <span class="fw-bold">area()</span> and <span class="fw-bold">circumference()</span>. Functions and objects are added to the root of a module by specifying additional properties on the special <span class="fw-bold">exports</span> object.</p>
+
+    <br>
+
+    <p>Variables local to the module will be private, because the module is wrapped in a function by Node.js. In this example, the variable PI is private to <span class="fw-bold">circle.js</span>.</p>
+
+    <br>
+
+    <p>The <span class="fw-bold">module.exports</span> property can be assigned a new value (such as a function or object).</p>
+
+    <br>
+
+    <p>Below, <span class="fw-bold">bar.js</span> makes use of the <span class="fw-bold">square</span> module, which exports a Square class:</p>
+
+    <div class="code-example">
+        <pre>const Square = require('./square.js');<br>const mySquare = new Square(2);<br>console.log(`The area of mySquare is ${mySquare.area()}`);</pre>
+    </div>
+
+    <br>
+
+    <p>The <span class="fw-bold">square</span> module is defined in <span class="fw-bold">square.js</span>:</p>
+
+    <div class="code-example">
+        <pre>// Assigning to exports will not modify module, must use module.exports<br>module.exports = class Square {<br>    constructor(width) {<br>         this.width = width;<br>    }<br><br><br>    area() {<br>         return this.width ** 2;<br>    }<br>};</pre>
+    </div>
+
+    <br><br>
+</div>
