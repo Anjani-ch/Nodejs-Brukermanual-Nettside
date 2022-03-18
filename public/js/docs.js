@@ -27,6 +27,15 @@ if (docs) {
                     else if (child.id !== target) child.classList.add('d-none');
                 });
             }
+        } else if (e.target.id === 'docs-menu-toggler') {
+            const docsMenuContainer = e.target.parentElement;
+            const docsMenu = docsMenuContainer.parentElement.parentElement.children[1];
+            const docsMenuIconSrc = !docsMenu.classList.contains('d-mb-none') ? '/img/hamburger-menu-icon.svg' : '/img/mark-icon.svg';
+
+            e.target.src = docsMenuIconSrc;
+
+            docsMenuContainer.style.marginTop = docsMenu.classList.contains('d-mb-none') ? '-5px' : '0px';
+            docsMenu.classList.toggle('d-mb-none');
         } else {
             let targetEl;
 

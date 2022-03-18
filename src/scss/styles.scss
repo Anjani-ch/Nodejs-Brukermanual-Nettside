@@ -29,6 +29,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
 
     img {
         filter: var(--nav-logo-color);
@@ -145,41 +146,88 @@ nav {
     }
 }
 
+
 #docs {
     display: grid;
     grid-template-columns: 1fr 5fr;
 
-    #docs-aside {
-        nav {
-            ul {
-                display: flex;
-                flex-direction: column;
+    #docs-menu-wrapper {
+        top: 0;
+        left: 0;
 
-                li {
-                    font-size: 1.2rem;
-                    cursor: pointer;
-                    margin: 5px 0px;
+        #docs-menu {
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            padding-top: 10px;
+        
+            img {
+                width: 20px;
+                margin-right: 15px;
+                cursor: pointer;
+                filter: var(--svg-white);
+            }
+        }
 
-                    .dropdown {
-                        &-head {
-                            display: flex;
-                            align-items: center;
-                            img {
-                                width: 15px;
-                                margin-left: 6px;
-
-                                &.dropdown-toggled {
-                                    transform: rotate(180deg);
+        #docs-aside {
+            top: 0;
+            left: 0;
+            
+            nav {
+                ul {
+                    display: flex;
+                    flex-direction: column;
+    
+                    li {
+                        font-size: 1.2rem;
+                        cursor: pointer;
+                        margin: 5px 0px;
+    
+                        .dropdown {
+                            &-head {
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    width: 15px;
+                                    margin-left: 6px;
+    
+                                    &.dropdown-toggled {
+                                        transform: rotate(180deg);
+                                    }
                                 }
                             }
+    
+                            &-content {
+                                display: flex;
+                                flex-direction: column;
+                                transform: translateX(10px);
+    
+                                li { margin: 4px 0px; }
+                            }
                         }
+                    }
+                }
+            }
 
-                        &-content {
-                            display: flex;
-                            flex-direction: column;
-                            transform: translateX(10px);
+            @include media-mobile {
+                margin-top: 10px;
+                margin-bottom: 20px;
+                background-color: var(--bg-primary);
+                padding-bottom: 10px;
+                color: var(--text-secondary);
 
-                            li { margin: 4px 0px; }
+                nav {
+                    ul {
+                        display: flex;
+                        flex-direction: column;
+        
+                        li {
+                            font-size: 1.2rem;
+                            cursor: pointer;
+                            margin: 5px 0px;
+        
+                            .dropdown {
+                                img { filter: var(--svg-white); }
+                            }
                         }
                     }
                 }
@@ -188,8 +236,6 @@ nav {
     }
 
     #docs-content {
-        margin-left: 20px;
-
         div {
             h1, h4 { margin-bottom: 9px; }
             ul, ol { transform: translateX(15px) }
@@ -206,6 +252,10 @@ nav {
                     @include media-mobile { width: 100%; }
                 }
             }
+        }
+
+        @include media-lg {
+            margin-left: 20px;
         }
     }
 }

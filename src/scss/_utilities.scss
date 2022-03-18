@@ -3,6 +3,22 @@
     max-width: 1100px;
     width: 90%;
     margin: 0 auto;
+
+    &-lg {
+        @include media-lg {
+            max-width: 1100px;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+
+    &-mb {
+        @include media-mobile {
+            max-width: 1100px;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
 }
 
 // Code Example
@@ -45,17 +61,28 @@ $display-properties: (block, inline, inline-block, flex, grid, none);
 
 @each $property in $display-properties {
     .d-#{$property} { display: #{$property}; }
+    .d-lg-#{$property} { @include media-lg { display: #{$property}; } }
     .d-mb-#{$property} { @include media-mobile { display: #{$property}; } }
-}
-@each $property in $display-properties {
+    .d-md-#{$property} { @include media-md { display: #{$property}; } }
+    .d-sm-#{$property} { @include media-sm { display: #{$property}; } }
+
     .d-#{$property}-important { display: #{$property} !important; }
-    .d-mb-#{$property}-important { @include media-mobile { display: #{$property}; } }
+    .d-lg-#{$property}-important { @include media-lg { display: #{$property} !important; } }
+    .d-mb-#{$property}-important { @include media-mobile { display: #{$property} !important; } }
+    .d-md-#{$property} { @include media-md { display: #{$property} !important; } }
+    .d-sm-#{$property} { @include media-sm { display: #{$property} !important; } }
 }
 
 // Position
 $position-properties: (static, relative, absolute, sticky, fixed);
 
-@each $property in $position-properties { .position-#{$property} { position: #{$property}; } }
+@each $property in $position-properties {
+    .position-#{$property} { position: #{$property}; }
+    .position-lg-#{$property} { @include media-lg { position: #{$property}; } }
+    .position-mb-#{$property} { @include media-mobile { position: #{$property}; } }
+    .position-md-#{$property} { @include media-md { position: #{$property}; } }
+    .position-sm-#{$property} { @include media-sm { position: #{$property}; } }
+}
 
 // Justify content
 $justify-content-properties: (flex-start, center, flex-end, space-around, space-between);
