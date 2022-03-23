@@ -25,18 +25,18 @@
 
     <br>
 
-    <p>Variables local to the module will be private, because the module is wrapped in a function by Node.js. In this example, the variable PI is private to <span class="fw-bold">circle.js</span>.</p>
+    <p>Variables local to the module will be private, because the module is wrapped in a function by Node.js. In this example, the variable <span class="fw-bold">PI</span> is private to <span class="fw-bold">circle.js</span>.</p>
 
     <br>
 
-    <p>The <span class="fw-bold">module.exports</span> property can be assigned a new value (such as a function or object).</p>
+    <p>The <span class="fw-bold">module.exports</span> property can be assigned a new value, for example a function or object.</p>
 
     <br>
 
     <p>Below, <span class="fw-bold">bar.js</span> makes use of the <span class="fw-bold">square</span> module, which exports a Square class:</p>
 
     <div class="code-example">
-        <pre>const Square = require('./square.js');<br>const mySquare = new Square(2);<br>console.log(`The area of mySquare is ${mySquare.area()}`);</pre>
+        <pre>const Square = require('./square.js');<br>const mySquare = new Square(2);<br><br>console.log(`The area of mySquare is ${mySquare.area()}`);</pre>
     </div>
 
     <br>

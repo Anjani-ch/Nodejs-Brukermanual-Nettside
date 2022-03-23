@@ -1,19 +1,19 @@
 <div class="d-none" id="docs-npm">
     <h1>NPM</h1>
 
-    <p><span class="fw-bold">npm</span> is two things: first and foremost, it is an online repository for the publishing of open-source Node.js projects; second, it is a command-line utility for interacting with said repository that aids in package installation, version management, and dependency management. A plethora of Node.js libraries and applications are published on npm, and many more are added every day. These applications can be searched for on <a href="https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a>. Once you have a package you want to install, it can be installed with a single command-line command.</p>
+    <p><span class="fw-bold">npm</span> is two things: it is an online repository for publishing open-source Node.js projects. It is also a command-line utility for interacting with repositories that helps in package installation, version management, and dependency management. A large amount of Node.js libraries and applications are published on npm. These applications can be searched for on <a href="https://www.npmjs.com/" target="_blank">https://www.npmjs.com/</a>. Once you have a package you want to install, it can be installed with a single command-line command. <span class="fw-bold">npm install {package-name}</span></p>
 
     <br>
 
-    <p>Let's say you're hard at work one day, developing the Next Great Application. You come across a problem, and you decide that it's time to use that cool library you keep hearing about - let's use Caolan McMahon's async as an example. Thankfully, <span class="fw-bold">npm</span> is very simple to use: you only have to run <span class="fw-bold">npm install async</span>, and the specified module will be installed in the current directory under <span class="fw-bold">./node_modules/</span>. Once installed to your <span class="fw-bold">node_modules</span> folder, you'll be able to use <span class="fw-bold">require()</span> on them just like they were built-ins.</p>
+    <p>For example let's install the express framework. To do so we run <span class="fw-bold">npm install express</span>. The specified module will be installed in the <span class="fw-bold">./node_modules/</span> folder. Once installed to your <span class="fw-bold">node_modules</span> folder, you'll be able to use <span class="fw-bold">require()</span> on them just like any other module.</p>
 
     <br>
 
-    <p>Let's look at an example of a global install - let's say <span class="fw-bold">coffee-script</span>. The npm command is simple: <span class="fw-bold">npm install coffee-script -g</span>. This will typically install the program and put a symlink to it in <span class="fw-bold">/usr/local/bin/</span>. This will then allow you to run the program from the console just like any other CLI tool. In this case, running <span class="fw-bold">coffee</span> will now allow you to use the coffee-script REPL.</p>
+    <p>Let's look at an example of a global install. All we need to to is add a <span class="fw-bold">-g</span> flag to the command. <span class="fw-bold">npm install express -g</span> This will install the program globally on your system, which means you can access it whitin everywhere in your system.</p>
 
     <br>
 
-    <p>Another important use for npm is dependency management. When you have a node project with a package.json file, you can run <span class="fw-bold">npm install</span> from the project root and npm will install all the dependencies listed in the package.json. This makes installing a Node.js project from a git repo much easier! For example, <span class="fw-bold">vows</span>, a Node.js testing framework, can be installed from git, and its single dependency, <span class="fw-bold">eyes</span>, can be automatically handled:</p>
+    <p>Another important use for npm is dependency management. When you have a node project with a package.json file, you can run <span class="fw-bold">npm install</span> from the project root and npm will install all the dependencies listed in the package.json. This makes for example installing a Node.js project from a git repo easier.</p>
 
     <br>
 

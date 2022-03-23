@@ -1,19 +1,11 @@
 <div class="d-none" id="docs-template-engines">
     <h1>Template Engines</h1>
 
-    <p>Template engine helps us to create an HTML template with minimal code. Also, it can inject data into HTML template at client side and produce the final HTML.</p>
+    <p>Template engine helps us to create an HTML template with minimal code. It can also inject data into HTML template from the server, and produce the final HTML.</p>
 
     <br>
 
-    <p>The following figure illustrates how template engine works in Node.js:</p>
-
-    <br><br>
-
-    <img src="/img/template-engines-logic.png" alt="template-engines-logic">
-
-    <br><br>
-
-    <p>As per the above figure, client-side browser loads HTML template, JSON/XML data and template engine library from the server. Template engine produces the final HTML using template and data in client's browser. However, some HTML templates process data and generate final HTML page at server side also.</p>
+    <p>Most template engines allow for the use of partials where you can split your templates into reusable modules. When rendering templates on client we also render in partials that were brought inn along with any injected data from the server.</p>
 
     <br>
 
